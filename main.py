@@ -632,7 +632,7 @@ last_command_time = {}
 
 #1001523096357
 
-@dp.message_handler(commands=['kukurusa', 'kukuruza'])
+@dp.message_handler(commands=['kukurusa', 'kukuruza', 'dick'])
 @command_limiter2
 async def main(message: types.Message) :
     conn = sqlite3.connect('updates.db')
@@ -917,11 +917,11 @@ async def abgrade(message: types.Message) :
         conn.commit()
         cur.close()
         conn.close()
-        await message.reply (f'<a href="https://t.me/{message.sender_chat.id}"> {message.from_user.first_name}</a>! ты заработал <b>{rangeupnum}</b> очков улушения! ты можешь что-то улучшить!' , parse_mode='html', disable_web_page_preview=True)
+        #await message.reply (f'<a href="https://t.me/{message.sender_chat.id}"> {message.from_user.first_name}</a>! ты заработал <b>{rangeupnum}</b> очков улушения! ты можешь что-то улучшить!' , parse_mode='html', disable_web_page_preview=True)
 
-        await message.answer(f'1. увеличить разброс рулетки на {rangeupnum}!!! \n2. уменьшить кд на {rangeupnum} мин!!! \n3.отрезат пиписа сопернику на {rangeupnum} см!!! \n4. увеличить рандом баллов улучшения на 1!!! \n5. подарить {rangeupnum}см своей пиписи... ')
-        await message.answer(f'Вы пишете от лица канала или чата, поэтому отправьте выбранный вариант ответом на это сообщение')
-        await message.answer(message.sender_chat.id)
+        #await message.answer(f'1. увеличить разброс рулетки на {rangeupnum}!!! \n2. уменьшить кд на {rangeupnum} мин!!! \n3.отрезат пиписа сопернику на {rangeupnum} см!!! \n4. увеличить рандом баллов улучшения на 1!!! \n5. подарить {rangeupnum}см своей пиписи... ')
+        #await message.answer(f'Вы пишете от лица канала или чата, поэтому отправьте выбранный вариант ответом на это сообщение')
+        #await message.answer(message.sender_chat.id)
 
         return
 
@@ -2312,5 +2312,5 @@ async def stop_command(message: types.Message):
 
 if __name__ == '__main__':
     from aiogram import executor
-    executor.start_polling(dp, skip_updates=True)
+    executor.start_polling(dp, skip_updates=False)
     
